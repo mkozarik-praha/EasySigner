@@ -105,7 +105,7 @@ _Add screenshots here._
 
 Download the latest release from the GitHub Releases page:
 
-https://github.com/YOUR_USERNAME/EasySigner/releases
+https://github.com/mkozarik-praha/EasySigner/releases
 
 ---
 
