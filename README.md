@@ -74,7 +74,7 @@ The app is not yet notarized by Apple — these warnings are expected. Notarizat
 
 For signing with eObčanka you also need the official **eObčanka – Správce karty** application installed; the PKCS#11 library path is then pre-configured automatically (`/usr/local/lib/eOPCZE/libeopproxyp11.dylib`).
 
-📄 **Full step-by-step macOS guide (in Czech), including troubleshooting:** see `FirstStartOnMacOS.pdf` attached to the release.
+📄 **Full step-by-step macOS guide (in Czech), including troubleshooting:** see `First_start_on_MacOS.pdf` attached to the release.
 
 ---
 
