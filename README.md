@@ -1,129 +1,121 @@
 # EasySigner
 
-**EasySigner** is a free electronic signature application for PDF documents.
-
-Sign documents with a qualified electronic signature (QES) in just a few clicks:
+**EasySigner** is a free application for signing PDF documents with a qualified electronic signature (QES) — in just a few clicks:
 
 1. Open a PDF document
-2. Select the signature location
-3. Choose your certificate
+2. Select the signature location with your mouse
+3. Choose your certificate and enter the PIN
 4. Sign
 
 No complicated workflows, no unnecessary configuration, no platform-specific editions.
 
 ## Why EasySigner?
 
-✅ **Free to use**
+✅ **Free to use** — no feature limits, no subscriptions
 
-✅ **One application for both Windows and macOS**
+✅ **One application for both Windows and macOS** — same look, same behavior
 
 ✅ **Modern and simple user interface**
 
-✅ **Support for USB tokens and smart cards (PKCS#11)**
+✅ **Hardware tokens and smart cards (PKCS#11)** — including the Czech national ID card (eObčanka)
 
-✅ **Support for PFX / P12 certificates**
+✅ **Certificate files (.pfx / .p12)**
 
-✅ **Visible signature appearance**
+✅ **Visible signature appearance** — custom text and an optional image of your handwritten signature
 
-✅ **Timestamp support (TSA)**
+✅ **PAdES-compliant signatures** — profiles B-B, B-T, B-LT and archival B-LTA
 
-✅ **PAdES-compliant PDF signatures**
+✅ **Timestamping (RFC 3161)** — optional TSA integration for long-term validation
 
-✅ **Multiple languages**
-- English
-- Ukrainian
-- Czech
+✅ **Three languages** — English, Czech, Ukrainian
 
-✅ **Local signing**
-- Your documents remain on your computer.
-- Private keys never leave your token or certificate container.
-
----
-
-## Features
-
-### PDF Signing
-
-EasySigner allows you to visually place a signature anywhere in a PDF document and apply a legally valid digital signature.
-
-### PKCS#11 Token Support
-
-Works with hardware tokens and smart cards using PKCS#11 drivers.
-
-### Certificate File Support
-
-Use certificates stored in:
-
-- `.p12`
-- `.pfx`
-
-files.
-
-### Advanced PAdES Signatures
-
-Supported signature profiles:
-
-- PAdES B-B
-- PAdES B-T
-- PAdES B-LT
-- PAdES B-LTA
-
-### Timestamping
-
-Optional integration with Time Stamp Authority (TSA) servers for long-term signature validation.
-
-### Cross-Platform
-
-The same application and user experience on:
-
-- Windows
-- macOS
-
-No separate editions. No feature limitations.
-
----
-
-## Screenshots
-
-_Add screenshots here._
-
----
-
-## System Requirements
-
-### Windows
-
-- Windows 10 or later
-
-### macOS
-
-- macOS 12 Monterey or later
+🔒 **Local signing.** Your documents never leave your computer. Private keys never leave your token or certificate container. The PIN is never written to disk. The only network communication is the optional request to your timestamp (TSA) server.
 
 ---
 
 ## Download
 
-Download the latest release from the GitHub Releases page:
+Get the latest release from the [Releases page](https://github.com/mkozarik-praha/EasySigner/releases).
 
-https://github.com/mkozarik-praha/EasySigner/releases
+| Platform | File | Notes |
+|---|---|---|
+| Windows 10 or later (x64) | `EasySigner-win64-*.zip` | Portable — unzip and run `EasySigner.exe` |
+| macOS 12 Monterey or later (Apple Silicon) | `EasySigner-osx-arm64.app.zip` | M1 or newer; Intel Macs are not supported yet |
+
+Each release lists SHA-256 checksums. To verify your download on macOS or Linux:
+
+```
+shasum -a 256 EasySigner-osx-arm64.app.zip
+```
+
+---
+
+## Installation
+
+### Windows
+
+1. Unzip the archive to any folder
+2. Run `EasySigner.exe`
+3. Windows SmartScreen may warn about an unrecognized app on first launch — choose **More info → Run anyway**
+
+If you sign with eObčanka, the PKCS#11 driver path is pre-configured automatically (`C:\Windows\System32\eopproxyp11.dll`, installed with the official eObčanka software).
+
+### macOS
+
+1. Unzip the archive and move **EasySigner.app** to **/Applications** (do not run it from Downloads)
+2. First launch: **right-click → Open** and confirm. On newer macOS versions, if that doesn't work: try to launch once, then go to **System Settings → Privacy & Security → Open Anyway**
+3. Still blocked with a "damaged" message? Run in Terminal:
+   ```
+   xattr -cr "/Applications/EasySigner.app"
+   ```
+
+The app is not yet notarized by Apple — these warnings are expected. Notarization is planned (see Roadmap).
+
+For signing with eObčanka you also need the official **eObčanka – Správce karty** application installed; the PKCS#11 library path is then pre-configured automatically (`/usr/local/lib/eOPCZE/libeopproxyp11.dylib`).
+
+📄 **Full step-by-step macOS guide (in Czech), including troubleshooting:** see `FirstStartOnMacOS.pdf` attached to the release.
+
+---
+
+## Screenshots
+
+<!-- Replace with real screenshots. Recommended: main window + signature placement. -->
+*Coming soon.*
+
+---
+
+## How it works
+
+- Certificates are read from your token via the standard **PKCS#11** interface (any vendor's token works — select its driver library in Settings), or from a **PKCS#12** file (`.pfx`/`.p12`)
+- The signature is embedded as a **PAdES** (CAdES-in-PDF) signature; for B-LT/B-LTA profiles the app also embeds revocation evidence (OCSP/CRL) and a document timestamp, so signatures remain verifiable years later
+- The signed file is saved next to the original with the `_signed` suffix
+
+---
+
+## Roadmap
+
+- Apple notarization and Windows code signing (removes the first-launch warnings)
+- Signature validation — verify who signed a document and whether it was modified
+- macOS Keychain integration for storing the TSA password
+- Your suggestions — please [open an issue](https://github.com/mkozarik-praha/EasySigner/issues)!
+
+---
+
+## Source code
+
+The source is currently not published because the application uses commercial third-party libraries. If there is community interest, the code can be published without the license keys (it would compile, but not be fully functional). The application itself is and will remain free.
 
 ---
 
 ## License
 
-EasySigner is **free software**.
-
-The application is provided free of charge for personal and commercial use.
-
-All rights reserved.
+EasySigner is **freeware** — free of charge for personal and commercial use. All rights reserved.
 
 ---
 
 ## Support the Project
 
-EasySigner is developed in spare time and distributed free of charge.
-
-If you find the project useful, consider supporting its development:
+EasySigner is developed in spare time and distributed free of charge. If you find it useful, consider supporting its development:
 
 ☕ https://buymeacoffee.com/mkozarik
 
