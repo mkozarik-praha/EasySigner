@@ -81,7 +81,10 @@ For signing with eObčanka you also need the official **eObčanka – Správce k
 ## Screenshots
 
 <!-- Replace with real screenshots. Recommended: main window + signature placement. -->
-*Coming soon.*
+<img width="1200" height="630" alt="easysigner-nahledovy-obrazek" src="https://github.com/user-attachments/assets/5e88f95d-88cd-484d-9715-ed16bc62e1b3" />
+<img width="950" height="492" alt="Screenshot 2026-07-10 215623" src="https://github.com/user-attachments/assets/31167c92-dc94-47b5-9fda-3c06f6f72350" />
+<img width="904" height="917" alt="EasySigner2" src="https://github.com/user-attachments/assets/69e611e5-11b6-4566-a9ba-ff5e9a85d624" />
+
 
 ---
 
