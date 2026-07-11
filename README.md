@@ -17,7 +17,7 @@ No complicated workflows, no unnecessary configuration, no platform-specific edi
 
 ✅ **Modern and simple user interface**
 
-✅ **Hardware tokens and smart cards (PKCS#11)** — including the Czech national ID card (eObčanka)
+✅ **Hardware tokens and smart cards (PKCS#11)** — the Czech national ID card (eObčanka) works out of the box, and any other PKCS#11-compatible token can be used by selecting its vendor's driver library in Settings
 
 ✅ **Certificate files (.pfx / .p12)**
 
