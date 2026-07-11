@@ -40,7 +40,7 @@ Get the latest release from the [Releases page](https://github.com/mkozarik-prah
 | Platform | File | Notes |
 |---|---|---|
 | Windows 10 or later (x64) | `EasySigner-win64-*.zip` | Portable — unzip and run `EasySigner.exe` |
-| macOS 12 Monterey or later (Apple Silicon) | `EasySigner-osx-arm64.app.zip` | M1 or newer; Intel Macs are not supported yet |
+| macOS 12 Monterey or later (Apple Silicon) | `EasySigner-osx-arm64.app.zip` | M1 or newer; an Intel (x64) build is in preparation |
 
 Each release lists SHA-256 checksums. To verify your download on macOS or Linux:
 
@@ -94,6 +94,7 @@ For signing with eObčanka you also need the official **eObčanka – Správce k
 
 ## Roadmap
 
+- macOS build for Intel Macs (x64)
 - Apple notarization and Windows code signing (removes the first-launch warnings)
 - Signature validation — verify who signed a document and whether it was modified
 - macOS Keychain integration for storing the TSA password
