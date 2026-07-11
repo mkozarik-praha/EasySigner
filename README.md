@@ -68,6 +68,7 @@ If you sign with eObčanka, the PKCS#11 driver path is pre-configured automatica
    ```
    xattr -cr "/Applications/EasySigner.app"
    ```
+4. If none of the above helps, follow the full step-by-step guide (see below) — it includes a local ad-hoc signing procedure that resolves the remaining cases
 
 The app is not yet notarized by Apple — these warnings are expected. Notarization is planned (see Roadmap).
 
