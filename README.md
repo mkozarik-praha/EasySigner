@@ -39,7 +39,7 @@ Get the latest release from the [Releases page](https://github.com/mkozarik-prah
 
 | Platform | File | Notes |
 |---|---|---|
-| Windows 10 or later (x64) | `EasySigner-win64-*.zip` | Portable — unzip and run `EasySigner.exe` |
+| Windows 10 or later (x64) | `EasySigner-win64.zip` | Portable — unzip and run `EasySigner.exe` |
 | macOS 12 Monterey or later (Apple Silicon) | `EasySigner-osx-arm64.zip` | M1 or newer; an Intel (x64) build is in preparation |
 
 Each release lists SHA-256 checksums. To verify your download on macOS or Linux:
